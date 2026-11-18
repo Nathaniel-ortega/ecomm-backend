@@ -4,13 +4,14 @@ services:
     runtime: node
     plan: free
     region: singapore
-    buildCommand: npm ci --include=dev && npm run build
+    buildCommand: npm install --include=dev && npm run build
     startCommand: npm run start
     healthCheckPath: /_health
     autoDeploy: true
     envVars:
       - { key: NODE_ENV, value: production }
       - { key: NODE_VERSION, value: "22" }
+      - { key: NODE_OPTIONS, value: "--max-old-space-size=460" }
       - { key: HOST, value: 0.0.0.0 }
       - { key: IS_PROXIED, value: "true" }
       - { key: PUBLIC_URL, sync: false }
