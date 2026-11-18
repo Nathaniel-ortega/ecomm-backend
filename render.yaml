@@ -4,7 +4,8 @@ services:
     runtime: node
     plan: free
     region: singapore
-    buildCommand: npm install --include=dev && npm run build
+    # Naka-build na ang admin panel sa dist/ (ginawa sa laptop), kaya install lang dito
+    buildCommand: npm install --include=dev
     startCommand: npm run start
     healthCheckPath: /_health
     autoDeploy: true

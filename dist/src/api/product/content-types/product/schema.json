@@ -1,0 +1,52 @@
+{
+    "kind": "collectionType",
+    "collectionName": "products",
+    "info": {
+        "singularName": "product",
+        "pluralName": "products",
+        "displayName": "Product"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "name": {
+            "type": "string",
+            "required": true
+        },
+        "description": {
+            "type": "text",
+            "required": true
+        },
+        "price": {
+            "type": "decimal",
+            "required": true
+        },
+        "stock": {
+            "type": "integer",
+            "required": true,
+            "min": 0
+        },
+        "category": {
+            "type": "enumeration",
+            "enum": [
+                "Electronics",
+                "Clothing",
+                "Accessories",
+                "Home"
+            ]
+        },
+        "isActive": {
+            "type": "boolean",
+            "default": true
+        },
+        "image": {
+            "type": "media",
+            "multiple": false,
+            "allowedTypes": [
+                "images"
+            ]
+        }
+    }
+}
